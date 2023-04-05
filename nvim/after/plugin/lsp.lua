@@ -4,7 +4,8 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
 	'tsserver',
-	'eslint'
+	'eslint',
+	
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -19,6 +20,9 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.signature_help() end, opts)
+
+	lsp.default_keymaps({buffer = bufnr})
+  	lsp.buffer_autoformat()
 end)
 
 lsp.setup()
