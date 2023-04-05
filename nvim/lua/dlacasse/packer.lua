@@ -83,4 +83,5 @@ return require('packer').startup(function(use)
 			{ 'vim-airline/vim-airline-themes' }
 		}
 	}
+	use { 'mg979/vim-visual-multi' }
 end)
