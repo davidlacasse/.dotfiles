@@ -78,4 +78,9 @@ return require('packer').startup(function(use)
 			require("nvterm").setup()
 		end,
 	}
+	use { 'vim-airline/vim-airline',
+		requires = {
+			{ 'vim-airline/vim-airline-themes' }
+		}
+	}
 end)
