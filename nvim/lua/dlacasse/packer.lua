@@ -1,5 +1,14 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
+local function SetNvimRequirements() 
+	-- disable netrw at the very start of your init.lua (strongly advised)
+	vim.g.loaded_netrw = 1
+	vim.g.loaded_netrwPlugin = 1
+
+	-- set termguicolors to enable highlight groups
+	vim.opt.termguicolors = true
+end
+SetNvimRequirements()
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -38,6 +47,11 @@ return require('packer').startup(function(use)
 			{'hrsh7th/nvim-cmp'},     -- Required
 			{'hrsh7th/cmp-nvim-lsp'}, -- Required
 			{'L3MON4D3/LuaSnip'},     -- Required
+		}
+	}
+	use{'nvim-tree/nvim-tree.lua', 
+		requires = {
+			{'nvim-tree/nvim-web-devicons'}
 		}
 	}
 end)
