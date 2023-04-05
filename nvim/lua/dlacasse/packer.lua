@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' }, -- Required
 			{
-			      -- Optional
+				-- Optional
 				'williamboman/mason.nvim',
 				run = function()
 					pcall(vim.cmd, 'MasonUpdate')
@@ -72,4 +72,10 @@ return require('packer').startup(function(use)
 		end
 	}
 	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+	use {
+		"NvChad/nvterm",
+		config = function()
+			require("nvterm").setup()
+		end,
+	}
 end)

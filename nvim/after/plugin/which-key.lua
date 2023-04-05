@@ -86,6 +86,9 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["x"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
+	["th"] = { "<cmd>lua require('nvterm.terminal').toggle 'horizontal'<cr>", "Horizontal" },
+	["tv"] = { "<cmd>lua require('nvterm.terminal').toggle 'vertical'<cr>", "Vertical" },
+	["tf"] = { "<cmd>lua require('nvterm.terminal').toggle 'float'<cr>", "Float" },
 	["pf"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
 		"Find files",
@@ -101,6 +104,7 @@ local mappings = {
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 	["pr"] = { "<cmd>:Telescope oldfiles<cr>", "Recent Files" },
+	["tt"] = { "<cmd>:Telescope terms<cr>", "Find terminal" },
 	["C"] = { "<cmd>:Telescope colorscheme<cr>", "Colorschemes" },
 	g = {
 		name = "Git",
