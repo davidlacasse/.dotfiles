@@ -1,6 +1,6 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
-local function SetNvimRequirements() 
+local function SetNvimRequirements()
 	-- disable netrw at the very start of your init.lua (strongly advised)
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
@@ -19,12 +19,16 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
-	use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
-		vim.cmd('colorscheme rose-pine')
-	end})
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	use({
+		'rose-pine/neovim',
+		as = 'rose-pine',
+		config = function()
+			vim.cmd('colorscheme rose-pine')
+		end
+	})
+	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
 	use('nvim-lua/plenary.nvim')
 	use('mbbill/undotree')
@@ -34,36 +38,38 @@ return require('packer').startup(function(use)
 		branch = 'v2.x',
 		requires = {
 			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{                                      -- Optional
+			{ 'neovim/nvim-lspconfig' }, -- Required
+			{
+			      -- Optional
 				'williamboman/mason.nvim',
 				run = function()
-				pcall(vim.cmd, 'MasonUpdate')
+					pcall(vim.cmd, 'MasonUpdate')
 				end,
 			},
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     -- Required
-			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-			{'L3MON4D3/LuaSnip'},     -- Required
+			{ 'hrsh7th/nvim-cmp' }, -- Required
+			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
+			{ 'L3MON4D3/LuaSnip' }, -- Required
 		}
 	}
-	use{'nvim-tree/nvim-tree.lua', 
+	use { 'nvim-tree/nvim-tree.lua',
 		requires = {
-			{'nvim-tree/nvim-web-devicons'}
+			{ 'nvim-tree/nvim-web-devicons' }
 		}
 	}
 	use {
 		"folke/which-key.nvim",
-	 	config = function()
-    			vim.o.timeout = true
-    			vim.o.timeoutlen = 300
-    			require("which-key").setup {
-     				-- your configuration comes here
-      				-- or leave it empty to use the default settings
-      				-- refer to the configuration section below
-    			}
-  		end
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
 	}
+	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 end)

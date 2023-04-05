@@ -50,15 +50,15 @@ local setup = {
 		winblend = 0,
 	},
 	layout = {
-		height = { min = 4, max = 25 }, -- min and max height of the columns
-		width = { min = 20, max = 50 }, -- min and max width of the columns
-		spacing = 3, -- spacing between columns
-		align = "left", -- align columns left, center or right
+		height = { min = 4, max = 25 },                                -- min and max height of the columns
+		width = { min = 20, max = 50 },                                -- min and max width of the columns
+		spacing = 3,                                                   -- spacing between columns
+		align = "left",                                                -- align columns left, center or right
 	},
-	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+	ignore_missing = true,                                                 -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-	show_help = true, -- show help message on the command line when the popup is visible
-	triggers = "auto", -- automatically setup triggers
+	show_help = true,                                                      -- show help message on the command line when the popup is visible
+	triggers = "auto",                                                     -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
 		-- list of mode / prefixes that should never be hooked by WhichKey
@@ -91,7 +91,7 @@ local mappings = {
 		"Find files",
 	},
 	["pw"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-
+	["pb"] = { "<cmd>Telescope buffers<cr>", "Find buffer" },
 	P = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -102,7 +102,6 @@ local mappings = {
 	},
 	["pr"] = { "<cmd>:Telescope oldfiles<cr>", "Recent Files" },
 	["C"] = { "<cmd>:Telescope colorscheme<cr>", "Colorschemes" },
-
 	g = {
 		name = "Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
@@ -125,7 +124,6 @@ local mappings = {
 			"Diff",
 		},
 	},
-
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -162,7 +160,6 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		f = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find in current buffer" },
 	},
-
 	T = {
 		name = "Treesitter",
 		i = { "<cmd>TSInstallInfo<cr>", "Install info" },
@@ -171,7 +168,6 @@ local mappings = {
 		e = { "<cmd>TSEnable<cr>", "Enable" },
 		d = { "<cmd>TSDisable<cr>", "Disable" },
 	},
-
 	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 }
 
