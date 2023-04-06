@@ -182,7 +182,7 @@ local mappings = {
 		["<top>"] = { "<C-w>k", "Move top" },
 		["<bottom>"] = { "<C-w>j", "Move bottom" },
 	},
-	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
+	["z"] = { "<cmd>lua require('zen-mode').toggle({ window = { width = .85 }})<cr>", "Zen Mode" },
 }
 
 which_key.setup(setup)
