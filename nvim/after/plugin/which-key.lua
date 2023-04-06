@@ -14,9 +14,9 @@ local setup = {
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
 		-- No actual key bindings are created
 		presets = {
-			operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-			motions = true, -- adds help for motions
-			text_objects = true, -- help for text objects triggered after entering an operator
+			-- operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+			-- motions =true, -- adds help for motions
+			-- text_objects = true, -- help for text objects triggered after entering an operator
 			windows = true, -- default bindings on <c-w>
 			nav = true, -- misc bindings to work with windows
 			z = false, -- bindings for folds, spelling and others prefixed with z
@@ -108,7 +108,7 @@ local mappings = {
 	["C"] = { "<cmd>:Telescope colorscheme<cr>", "Colorschemes" },
 	g = {
 		name = "Git",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		g = { "<cmd>LazyGit<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -171,6 +171,16 @@ local mappings = {
 		s = { "<cmd>TSUpdateSync<cr>", "Update and sync" },
 		e = { "<cmd>TSEnable<cr>", "Enable" },
 		d = { "<cmd>TSDisable<cr>", "Disable" },
+	},
+	w = {
+		name = "Windows",
+		q = { "<C-w>q", "Quit" },
+		h = { "<C-w>s", "Split horizontal" },
+		v = { "<C-w>vs", "Split vertical" },
+		["<left>"] = { "<C-w>h", "Move left" },
+		["<right>"] = { "<C-w>l", "Move right" },
+		["<top>"] = { "<C-w>k", "Move top" },
+		["<bottom>"] = { "<C-w>j", "Move bottom" },
 	},
 	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 }
