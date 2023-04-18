@@ -179,8 +179,8 @@ local mappings = {
 		v = { "<C-w>vs", "Split vertical" },
 		["<left>"] = { "<C-w>h", "Move left" },
 		["<right>"] = { "<C-w>l", "Move right" },
-		["<top>"] = { "<C-w>k", "Move top" },
-		["<bottom>"] = { "<C-w>j", "Move bottom" },
+		["<up>"] = { "<C-w>k", "Move top" },
+		["<down>"] = { "<C-w>j", "Move bottom" },
 	},
 	["z"] = { "<cmd>lua require('zen-mode').toggle({ window = { width = .85 }})<cr>", "Zen Mode" },
 }
