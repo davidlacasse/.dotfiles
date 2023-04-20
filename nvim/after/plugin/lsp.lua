@@ -1,3 +1,5 @@
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
@@ -26,3 +28,9 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+cmp.setup({
+  mapping = {
+    ['<Tab>'] = cmp_action.tab_complete(),
+    ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+  }
+})
