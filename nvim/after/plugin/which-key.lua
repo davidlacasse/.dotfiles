@@ -181,6 +181,10 @@ local mappings = {
 		["<right>"] = { "<C-w>l", "Move right" },
 		["<up>"] = { "<C-w>k", "Move top" },
 		["<down>"] = { "<C-w>j", "Move bottom" },
+		["h"] = { "<C-w>h", "Move left" },
+		["l"] = { "<C-w>l", "Move right" },
+		["k"] = { "<C-w>k", "Move top" },
+		["j"] = { "<C-w>j", "Move bottom" },
 	},
 	["z"] = { "<cmd>lua require('zen-mode').toggle({ window = { width = .85 }})<cr>", "Zen Mode" },
 }
