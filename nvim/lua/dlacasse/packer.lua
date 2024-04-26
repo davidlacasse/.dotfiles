@@ -17,8 +17,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' }, { "kdheepak/lazygit.nvim" } },
         config = function()
             require("telescope").load_extension("lazygit")
@@ -74,7 +73,7 @@ return require('packer').startup(function(use)
             }
         end
     }
-    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
     use {
         "NvChad/nvterm",
         config = function()
